@@ -1,4 +1,4 @@
-// Copyright © 2008-2025 Pioneer Developers. See AUTHORS.txt for details
+// Copyright © 2008-2024 Pioneer Developers. See AUTHORS.txt for details
 // Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
 #include "Orbit.h"
@@ -41,12 +41,16 @@ double Orbit::OrbitalPeriodTwoBody(double semiMajorAxis, double totalMass, doubl
 	const double a3 = a * a * a;
 	return 2.0 * M_PI * sqrt(a3 / (G * totalMass));
 }
+//TODO: Implement function to calculate specific orbital energy of an orbit
+static double calc_orbital_energy(double semiMajorAxis, double centralMass, double eccentricity)
+{
 
+}
+
+//TODO: Implement function to calculate velocity area per second
 static double calc_velocity_area_per_sec(double semiMajorAxis, double centralMass, double eccentricity)
 {
-	const double a2 = semiMajorAxis * semiMajorAxis;
-	const double e2 = eccentricity * eccentricity;
-	return M_PI * a2 * sqrt((eccentricity < 1.0) ? (1 - e2) : (e2 - 1.0)) / Orbit::OrbitalPeriod(semiMajorAxis, centralMass);
+
 }
 
 static double calc_velocity_area_per_sec_gravpoint(double semiMajorAxis, double totalMass, double bodyMass, double eccentricity)
